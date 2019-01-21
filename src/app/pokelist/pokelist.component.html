@@ -1,14 +1,20 @@
-<div class="pokemon-container" *ngFor="let pokemon of pokemons">
-  <img src="{{pokemon.img}}" alt="">
-  <span class="pokemon-infos">
-    <h2>
-        {{pokemon.name}}
-    </h2>
-    {{pokemon.id}}
-    <br>
+<input type="text" placeholder="Chercher par nom...">
+<input type="number" placeholder="0">
+<select name="" id=""></select>
 
-    Type: <ul>
-      <li *ngFor="let type of pokemon.type">{{type}}</li>
-    </ul>
-  </span>
+<div class="container">
+  <div class="pokemon-container" *ngFor="let pokemon of pokemons">
+    <img src="{{pokemon.img}}" alt="">
+    <span class="pokemon-infos">
+      <h2>
+        {{pokemon.name}}
+      </h2>
+      {{pokemon.id}}
+      <br>
+
+      Type: <ul>
+        <li *ngFor="let type of pokemon.type">{{type}}</li>
+      </ul>
+    </span>
+  </div>
 </div>
