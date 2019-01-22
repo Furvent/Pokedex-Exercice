@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 
 import { HttpClient } from '@angular/common/http';
-import {SeedPokemonsService, Seed} from '../seed-pokemons.service';
+import { SeedPokemonsService, Seed } from '../seed-pokemons.service';
 
 @Component({
   selector: 'app-pokelist',
@@ -13,8 +13,8 @@ import {SeedPokemonsService, Seed} from '../seed-pokemons.service';
 export class PokelistComponent implements OnInit {
 
   seed: Seed;
-  pokemons: string[];
-  
+  pokemons: Pokemon[];
+
   constructor(private pokemonService: SeedPokemonsService) { }
 
   ngOnInit() {
@@ -23,10 +23,6 @@ export class PokelistComponent implements OnInit {
   }
 
   showSeed() {
-    this.pokemonService.getSeedResponse().subscribe(resp => {
-      const keys = resp.headers.keys();
-      this.pokemons = keys.map(key => `${key}: ${resp.headers.get(key)}`)
-      this.seed = {... resp.body};
-    });
-  }
+    this.pokemonService.getSeedResponse().subscribe(pokemons => this.pokemons = pokemons)
+  };
 }

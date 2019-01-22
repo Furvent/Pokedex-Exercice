@@ -22,7 +22,7 @@ export class SeedPokemonsService {
 
   constructor(private http: HttpClient) { }
 
-  getSeedResponse(): Observable<HttpResponse<Seed>> {
-    return this.http.get<Seed>(this.seedUrl, {observe: 'response'});
+  getSeedResponse(): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(this.seedUrl);
   }
 }
