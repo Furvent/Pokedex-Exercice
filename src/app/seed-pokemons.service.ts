@@ -1,8 +1,7 @@
 import {Pokemon} from './pokemon';
-import {POKEMONS} from './mock-pokemons';
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Seed {

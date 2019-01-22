@@ -1,9 +1,9 @@
-<input type="text" placeholder="Chercher par nom...">
-<input type="number" placeholder="0">
+<input type="text" [(ngModel)]="pokename" placeholder="Chercher par nom...">
+<input type="number" [(ngModel)]="pokeid" placeholder="0">
 <select name="" id=""></select>
 
 <div class="container">
-  <div class="pokemon-container" *ngFor="let pokemon of pokemons">
+  <div class="pokemon-container" *ngFor="let pokemon of pokemons | searchNameFilter:pokename | searchIdFilter:pokeid">
     <img src="{{pokemon.img}}" alt="">
     <span class="pokemon-infos">
       <h2>
