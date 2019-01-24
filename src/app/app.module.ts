@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { PokelistComponent } from './pokelist/pokelist.component';
 import { SearchNameFilterPipe } from './search-name-filter.pipe';
 import { SearchIdFilterPipe } from './search-id-filter.pipe';
+import { SearchTypeFilterPipe } from './search-type-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokelistComponent,
     SearchNameFilterPipe,
-    SearchIdFilterPipe
+    SearchIdFilterPipe,
+    SearchTypeFilterPipe
   ],
   imports: [
     BrowserModule,
