@@ -16,6 +16,10 @@ export class PokelistComponent implements OnInit {
   // Would be better to catch all type of pokemons, and fill values dynamically.
   types: String[] = ["Grass", "Poison", "Fire", "Flying", "Water", "Bug", "Normal", "Fighting", "Rock", "Steel", "Ice", "Ghost", "Dragon", "Psychic", "Ground", "Electric"];
 
+  // Must declare those var, without i had error when i try to make a prod build.
+  pokename: string;
+  pokeid: number;
+  poketype: string[];
   constructor(private pokemonService: SeedPokemonsService) { };
 
   ngOnInit() {
